@@ -49,7 +49,8 @@ def precio_carro(year, mileage, state, make, model):
 
     # se deben modificar los valores de este diccionario con el acceso a los modelos de los archivos plk
     # ejemplo: clf = joblib.load(os.path.dirname(__file__) + '/phishing_clf.pkl')
-    modelos = {'xgb': joblib.load(os.path.dirname(__file__) + '/xgboost_price.pkl')  }
+    modelos = {'xgb': joblib.load(os.path.dirname(__file__) + '/xgboost_price.pkl'),
+               'bgrf': joblib.load(os.path.dirname(__file__) + '/bgg_random_forest_price.pkl') }
     
     y_pred = pd.DataFrame(columns=modelos.keys())
     datos = {'Year': [year],
