@@ -1,2 +1,0 @@
-$ wget https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.es.300.bin.gz
-$ gunzip cc.es.300.bin.gz

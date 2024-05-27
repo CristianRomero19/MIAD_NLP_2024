@@ -19,8 +19,6 @@ ns = api.namespace('predict', description='Movie genres prediction Endpoint')
 
 # Definición argumentos o parámetros de la API
 parser = api.parser()
-parser.add_argument('year', type=int, required=True, help='movie year', location='args')
-parser.add_argument('title', type=str, required=True, help='movie title', location='args')
 parser.add_argument('plot', type=str, required=True, help='movie plot', location='args')
 
 
@@ -37,12 +35,12 @@ class PredictGenres(Resource):
         args = parser.parse_args()
         
         # Llamar a la función movie_genres con los parámetros obtenidos
-        result = probabilidad_genero_pelicula(args['year'], args['title'], args['plot'])
+        result = probabilidad_genero_pelicula( args['plot'])
 
         # Devolver el resultado en formato JSON
         return {'result': result}, 200
     
-# http://192.168.0.45:5000/predict/?year=1990&title=Drugs&plot=This is a comedy movie
+# http://192.168.0.45:5000/predict/?plot=This is a comedy movie
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False, host='0.0.0.0', port=5000)
