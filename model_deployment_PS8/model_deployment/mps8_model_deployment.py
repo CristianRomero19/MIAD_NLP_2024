@@ -4,10 +4,10 @@ import joblib
 
 def probabilidad_genero_pelicula(plot: str):
     # Sequential modelo pre entrenado 
-    clf = joblib.load(os.path.dirname(__file__) + './red_neuronal_peliculas_alterno.pkl')
+    clf = joblib.load(os.path.dirname(__file__) + '/red_neuronal_peliculas_alterno.pkl')
     
     # Inicializar CountVectorizer con el máximo de características deseado
-    vect = joblib.load(os.path.dirname(__file__) + './vect.pkl')
+    vect = joblib.load(os.path.dirname(__file__) + '/vect.pkl')
 
     # Lista de documentos
     documents = [plot]
